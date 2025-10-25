@@ -68,7 +68,7 @@ function createMcpServer(): Server {
     CallToolRequestSchema,
     async (request: CallToolRequest) => {
       if (request.params.name === "echo") {
-        const args = toolInputParser.parse(request.params.arguments ?? {});
+        const args = toolInputParser.parse(request.params.arguments);
 
         return {
           content: [
